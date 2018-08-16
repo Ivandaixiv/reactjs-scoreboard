@@ -40,7 +40,7 @@ const Player= (props) => {
   return (
     <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => props.onRemovePlayer(props.id)}>✖</button>
+        <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
         { props.name }
       </span>
 
@@ -91,7 +91,7 @@ class Application extends React.Component {
         {/* Players list */}
         {this.state.players.map( player =>
           <Player 
-            onRemovePlayer={ this.handleRemovePlayer }      
+            removePlayer={ this.handleRemovePlayer }      
             name={player.name}
             id={player.id}
             key={player.id.toString()}
