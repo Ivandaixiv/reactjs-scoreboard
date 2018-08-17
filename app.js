@@ -49,7 +49,7 @@ const Player= (props) => {
   );
 }
 
-class Application extends React.Component {
+class App extends React.Component {
   
   state = {
     players: [
@@ -102,4 +102,4 @@ class Application extends React.Component {
   }
 }  
 
-ReactDOM.render(<Application />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
