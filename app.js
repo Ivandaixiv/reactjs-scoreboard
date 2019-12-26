@@ -4,6 +4,7 @@ const Header = () => {
             <h1>Scoreboard</h1>
             <span className="stats">Players: 1</span>
         </header>
+
     );
 }
 
@@ -13,6 +14,8 @@ const Player = () => {
             <span className="player-name">
                 Ivan
             </span>
+
+            <Counter />
         </div>
     );
 }
@@ -26,7 +29,20 @@ const Counter = () => {
         </div>
     );
 }
+
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header />
+            
+            {/* Players List */}
+
+            <Player />
+        </div>
+    );
+}
+
 ReactDOM.render(
-    <Counter />,
+    <App />,
     document.getElementById('root'),
 );
