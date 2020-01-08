@@ -56,14 +56,14 @@ class Counter extends React.Component {
     // };
 
     incrementScore = () => {
-        this.setState({
-            score: this.state.score + 1
-        });
+        this.setState( prevState => ({
+            score: prevState.score + 1
+        }));
     }
     decrementScore = () => {
-        this.setState({
-            score: this.state.score - 1
-        });
+        this.setState( prevState => ({
+            score: prevState.score - 1
+        }));
     }
 
     render () {
@@ -77,20 +77,27 @@ class Counter extends React.Component {
     }
 }
 
-const App = (props) => {
-    return (
-        <div className="scoreboard">
-            <Header title="Scoreboard" totalPlayers={props.initialPlayers.length} />
-            
-            {/* Players List */}
-            {props.initialPlayers.map( player =>
-                <Player 
-                    name={player.name}
-                    key={player.id.toString()}
-                />
-            )}
-        </div>
-    );
+class App extends React.Component {
+
+    state = {
+
+    };
+    
+    render () {
+        return (
+            <div className="scoreboard">
+                <Header title="Scoreboard" totalPlayers={props.initialPlayers.length} />
+                
+                {/* Players List */}
+                {props.initialPlayers.map( player =>
+                    <Player 
+                        name={player.name}
+                        key={player.id.toString()}
+                    />
+                )}
+            </div>
+        );
+    }
 }
 
 ReactDOM.render(
