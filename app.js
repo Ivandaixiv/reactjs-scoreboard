@@ -11,8 +11,7 @@ const Header = props => {
 const Player = props => {
   return (
     <div className="player">
-        <span className="player-name">{props.name}
-            Players: {props.totalPlayers}
+        <span className="player-name">
             <button
             className="remove-player"
             onClick={() => {
@@ -20,6 +19,7 @@ const Player = props => {
             }}>
             ✖
             </button>
+            {props.name}
         </span>
 
       <Counter />
